@@ -17,6 +17,9 @@ Template.DonesList.helpers({
    *    return Items.find();
    *  }
    */
+  dones: function () {
+    return Dones.find();
+  }
 });
 
 /*****************************************************************************/

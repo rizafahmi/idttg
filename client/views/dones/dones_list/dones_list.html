@@ -1,3 +1,15 @@
 <template name="DonesList">
-  client/views/dones/dones_list/dones_list.html
+  <div class="fourteen column">
+    <div class="ui list">
+      {{#each dones}}
+      <div class="item"><i class="checkmark green icon"></i> {{entry}}</div>
+      {{/each}}
+    </div>
+
+
+  </div>
+  <div class="two column">
+
+
+  </div>
 </template>
