@@ -1,3 +1,49 @@
 <template name="MasterLayout">
-  {{> yield}}
+  <div class="full height">
+
+    <!-- =============== MENU ====================== -->
+    <div class="ui large inverted fixed network menu">
+      <div class="header item">DTTG</div>
+      <div class="right menu">
+        <div class="ui mobile dropdown link item" tabindex="0">
+          Menu
+          <i class="dropdown icon"></i>
+          <div class="menu" tabindex="-1">
+            <a class="item">Classes</a>
+            <a class="item">Cocktail Hours</a>
+            <a class="item">Community</a>
+          </div>
+        </div>
+        <div class="ui dropdown link item" tabindex="0">
+          Courses
+          <i class="dropdown icon"></i>
+          <div class="menu" tabindex="-1">
+            <a class="item">Petting</a>
+            <a class="item">Feeding</a>
+            <a class="item">Mind Reading</a>
+          </div>
+        </div>
+        <a class="item">Library</a>
+        <a class="item">Community</a>
+      </div>
+    </div>
+
+    <!-- =============== MENU ====================== -->
+
+
+
+    <div class="container">
+
+      <!-- =============== CONTENT ====================== -->
+      {{> yield}}
+
+      <!-- =============== CONTENT ====================== -->
+
+
+
+
+    </div> <!-- END container -->
+
+  </div> <!-- END full heigth -->
+
 </template>
