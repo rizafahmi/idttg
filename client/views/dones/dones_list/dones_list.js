@@ -8,6 +8,19 @@ Template.DonesList.events({
    *
    *  }
    */
+  'submit .formNew': function (e, tmpl) {
+    e.preventDefault();
+    console.log("Hey, new done");
+    var doneEntry = e.target.newDone.value;
+
+    Dones.insert({
+      entry: doneEntry,
+      dateCreated: new Date()
+    });
+
+    e.target.newDone.value = "";
+
+  }
 });
 
 Template.DonesList.helpers({

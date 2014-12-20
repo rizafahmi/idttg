@@ -1,21 +1,34 @@
 <template name="DonesList">
   <div class="column">
-    <table class="ui striped table">
-      <tbody>
-      {{#each dones}}
-      <tr>
-        <td>
-          <i class="checkmark green icon"></i> {{entry}}
-        </td>
-        <td class="right aligned">
-          <button class="ui icon tiny button"><i class="icon remove"></i></button>
-        </td>
-      </tr>
+    <!-- FORM -->
+    <form class="ui form formNew" name="formNew">
+      <table class="ui striped table">
+        <tbody>
+        {{#each dones}}
+        <tr>
+          <td>
+            <i class="checkmark green icon"></i> {{entry}}
+          </td>
+          <td class="right aligned">
+            <button class="ui icon tiny red button"><i class="icon remove"></i></button>
+          </td>
+        </tr>
 
-      {{/each}}
-      </tbody>
-    </table>
+        {{/each}}
 
+        <tr>
+          <td>
+            <input type="text" name="newDone" placeholder="What have you done today?">
+          </td>
+          <td class="right aligned buttons" style="width: 90px">
+            <button class="ui icon tiny teal button"><i class="icon save"></i> Save</button>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+
+    </form>
 
   </div>
 </template>
