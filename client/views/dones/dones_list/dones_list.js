@@ -10,16 +10,20 @@ Template.DonesList.events({
    */
   'submit .formNew': function (e, tmpl) {
     e.preventDefault();
-    console.log("Hey, new done");
     var doneEntry = e.target.newDone.value;
 
-    Dones.insert({
-      entry: doneEntry,
-      dateCreated: new Date()
-    });
+    if (doneEntry.length > 0) {
+      Dones.insert({
+        entry: doneEntry,
+        dateCreated: new Date()
+      });
 
-    e.target.newDone.value = "";
+      e.target.newDone.value = "";
+    }
 
+  },
+  'click .remove': function () {
+    Dones.remove(this._id);
   }
 });
 
