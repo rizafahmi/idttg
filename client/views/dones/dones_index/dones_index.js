@@ -11,12 +11,22 @@ Template.DonesIndex.events({
 });
 
 Template.DonesIndex.helpers({
-  /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
+  dates: function () {
+    var dones = Dones.find();
+    var data = [];
+    dones.fetch().forEach(function (item) {
+      var dateFormat = moment(item.dateCreated).format("MMM Do YY");
+      // if (data.indexOf({date: dateFormat}) < 0) {
+      if (!_.findWhere(data, {dateFormat: dateFormat})) {
+        data.push({
+          dateFormat: dateFormat,
+          date: item.dateCreated
+        });
+      }
+    });
+    console.log(data);
+    return data;
+  }
 });
 
 /*****************************************************************************/

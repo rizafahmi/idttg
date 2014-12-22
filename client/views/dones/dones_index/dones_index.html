@@ -11,7 +11,10 @@
         </div>
         <div class="six wide center aligned stackable column">
           
-          [Calendar area]
+          [Calendar area] <hr>
+          {{#each dates}}
+            {{this.dateFormat}}<br>
+          {{/each}}
 
         </div>
 
