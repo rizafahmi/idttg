@@ -47,7 +47,7 @@ Template.DonesList.helpers({
       dateCreated: {
         $gte: startDate.toDate()
       }
-    });
+    }, {sort: {dateCreated: -1}});
   },
   gratitudes: function () {
     var startDate = moment().startOf('day');
