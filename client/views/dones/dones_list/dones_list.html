@@ -1,13 +1,12 @@
 <template name="DonesList">
   <div class="column">
     <!-- FORM -->
-    <form class="ui form formNew" name="formNew">
       <table class="ui striped table">
         <tbody>
         {{#each dones}}
         <tr>
           <td>
-            <i class="checkmark green icon"></i> {{entry}}
+            <i class="checkmark green icon"></i> <span class="ui teal horizontal label">Done</span> {{entry}}
           </td>
           <td class="right aligned">
             <button type="button" class="ui icon tiny red button"><i class="icon remove"></i></button>
@@ -16,19 +15,40 @@
 
         {{/each}}
 
-        <tr class="positive">
-          <td>
-            <input type="text" name="newDone" placeholder="What have you done today?">
-          </td>
-          <td class="right aligned buttons" style="width: 90px">
-            <button class="ui icon tiny teal button"><i class="icon save"></i> Save</button>
-          </td>
-        </tr>
 
         </tbody>
       </table>
+      <form class="ui form formNew" name="formNew">
+        <table class="ui striped table">
+          <tbody>
+          <tr class="positive">
+            <td>
+              <input type="text" name="newDone" placeholder="What have you done today?">
+            </td>
+            <td class="right aligned buttons" style="width: 90px">
+              <button type="submit" class="ui icon tiny teal button"><i class="icon save"></i> Save</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </form>
+      <br>
 
-    </form>
+      <form class="ui form formNewGratitude" name="formNewGratitude">
+        <table class="ui striped table">
+          <tbody>
+          <tr class="negative">
+            <td>
+              <textarea name="newGratitude" placeholder="Ready to give us some gratidue?"></textarea>
+            </td>
+            <td class="right aligned buttons" style="width: 90px">
+              <button type="submit" class="ui icon tiny teal button"><i class="icon save"></i> Save</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </form>
+
 
   </div>
 </template>
