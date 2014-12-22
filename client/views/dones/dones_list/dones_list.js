@@ -35,7 +35,12 @@ Template.DonesList.helpers({
    *  }
    */
   dones: function () {
-    return Dones.find();
+    var startDate = moment().startOf('day');
+    return Dones.find({
+      dateCreated: {
+        $gte: startDate.toDate()
+      }
+    });
   }
 });
 

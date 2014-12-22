@@ -21,9 +21,14 @@
         <div class="ten wide stackable column">
             
           <div class="sixteen wide center aligned column">
-            <h2>Fri, 19 December 2014</h2>
+            <h2>Today, {{getToday}}</h2>
           </div>
           {{> DonesList}}
+
+          <div class="sixteen wide center aligned column">
+            <h2>Yesterday, {{getYesterday}}</h2>
+          </div>
+          {{> DonesListYesterday}}
 
         </div>
       </div>

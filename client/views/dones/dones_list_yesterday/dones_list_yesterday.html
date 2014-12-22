@@ -1,0 +1,25 @@
+<template name="DonesListYesterday">
+  <div class="column">
+    <!-- FORM -->
+    <form class="ui form formNew" name="formNew">
+      <table class="ui striped table">
+        <tbody>
+        {{#each dones}}
+        <tr>
+          <td>
+            <i class="checkmark green icon"></i> {{entry}}
+          </td>
+          <td class="right aligned">
+            <button type="button" class="ui icon tiny red button"><i class="icon remove"></i></button>
+          </td>
+        </tr>
+
+        {{/each}}
+
+        </tbody>
+      </table>
+
+    </form>
+
+  </div>
+</template>

@@ -24,8 +24,13 @@ Template.DonesIndex.helpers({
         });
       }
     });
-    console.log(data);
     return data;
+  },
+  'getToday': function () {
+    return moment().format('MMMM Do YYYY');
+  },
+  'getYesterday': function () {
+    return moment().add(-1, 'd').format('MMMM Do YYYY');
   }
 });
 
