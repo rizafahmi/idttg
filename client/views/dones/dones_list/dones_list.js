@@ -2,12 +2,6 @@
 /* DonesList: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
 Template.DonesList.events({
-  /*
-   * Example:
-   *  'click .selector': function (e, tmpl) {
-   *
-   *  }
-   */
   'submit .formNew': function (e, tmpl) {
     e.preventDefault();
     var doneEntry = e.target.newDone.value;
@@ -22,8 +16,11 @@ Template.DonesList.events({
     }
 
   },
-  'click .remove': function () {
+  'click .donesRemoveButton': function () {
     Dones.remove(this._id);
+  },
+  'click .gratefulReomveButton': function () {
+    Gratitudes.remove(this._id);
   },
   'submit .formNewGratitude': function (e, tmpl) {
     e.preventDefault();
