@@ -24,19 +24,34 @@ Template.DonesList.events({
   },
   'click .remove': function () {
     Dones.remove(this._id);
+  },
+  'submit .formNewGratitude': function (e, tmpl) {
+    e.preventDefault();
+    var gratitudeEntry = e.target.newGratitude.value;
+
+    if (gratitudeEntry.length > 0) {
+      Gratitudes.insert({
+        entry: gratitudeEntry,
+        dateCreated: new Date()
+      });
+
+      e.target.newGratitude.value = "";
+    }
   }
 });
 
 Template.DonesList.helpers({
-  /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
   dones: function () {
     var startDate = moment().startOf('day');
     return Dones.find({
+      dateCreated: {
+        $gte: startDate.toDate()
+      }
+    });
+  },
+  gratitudes: function () {
+    var startDate = moment().startOf('day');
+    return Gratitudes.find({
       dateCreated: {
         $gte: startDate.toDate()
       }
