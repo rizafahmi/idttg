@@ -31,6 +31,30 @@ Template.DonesIndex.helpers({
   },
   'getYesterday': function () {
     return moment().add(-1, 'd').format('MMMM Do YYYY');
+  },
+  'options': function () {
+    return {
+      events: function (start, end, timezone, callback) {
+        var events = [];
+
+        var calendar = Dones.find({});
+
+        if (calendar) {
+          calendar.fetch().forEach( function (event) {
+            eventDetail = {};
+            for ( dateCreated in event ) {
+              eventDetail['start'] = event['dateCreated'];
+              eventDetail['title'] = event['entry'];
+            }
+
+            events.push(eventDetail);
+          });
+        }
+        console.log(events);
+        callback(events);
+
+      }
+    }
   }
 });
 
