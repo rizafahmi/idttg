@@ -38,6 +38,7 @@ minimongo@1.0.6-rc.1
 mobile-status-bar@1.0.2-rc.1
 momentjs:moment@2.8.4
 mongo@1.0.10-rc.1
+mrt:jquery-ui@1.9.2
 nooitaf:semantic-ui@1.2.1
 observe-sequence@1.0.4-rc.1
 ordered-dict@1.0.2-rc.1
@@ -47,6 +48,8 @@ reactive-var@1.0.4-rc.1
 reload@1.1.2-rc.1
 retry@1.0.2-rc.1
 routepolicy@1.0.3-rc.1
+rzymek:fullcalendar@2.2.0_2
+rzymek:moment@2.8.3_10
 session@1.0.5-rc.1
 spacebars@1.0.4-rc.1
 spacebars-compiler@1.0.4-rc.1
