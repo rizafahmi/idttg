@@ -44,13 +44,11 @@ Template.DonesIndex.helpers({
             eventDetail = {};
             for ( dateCreated in event ) {
               eventDetail['start'] = event['dateCreated'];
-              eventDetail['title'] = event['entry'];
             }
 
             events.push(eventDetail);
           });
         }
-        console.log(events);
         callback(events);
 
       }
