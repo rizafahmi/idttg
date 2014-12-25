@@ -46,20 +46,23 @@ Template.DonesIndex.helpers({
             for ( dateCreated in event ) {
               var dateFormatted = moment(event['dateCreated']).format('YYYY-MM-DD');
               eventDetail['start'] = dateFormatted;
-              // eventDetail['title'] = '✓';
-              eventDetail['title'] = dateFormatted;
+              eventDetail['title'] = '✓';
+              // eventDetail['title'] = dateFormatted;
             }
 
-            events.push(eventDetail);
+            var exist = false;
+            events.forEach( function (item) {
+              if (item['start'] === dateFormatted)
+                exist = true;
+              else
+                exist = false;
+            });
+
+            if (!exist)
+              events.push(eventDetail);
           });
         }
-        var uniqueEvents = [];
-        for ( var i = 0; i < events.length - 1; i++ ) {
-          if ( events[i+1]['start'] != events[i]['start'] ) {
-            uniqueEvents.push(events[i]);
-          }
-        }
-        callback(uniqueEvents);
+        callback(events);
 
       }
     }
