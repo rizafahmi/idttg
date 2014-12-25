@@ -34,6 +34,7 @@ Template.DonesIndex.helpers({
   },
   'options': function () {
     return {
+      eventLimit: true,
       events: function (start, end, timezone, callback) {
         var events = [];
 
@@ -43,13 +44,22 @@ Template.DonesIndex.helpers({
           calendar.fetch().forEach( function (event) {
             eventDetail = {};
             for ( dateCreated in event ) {
-              eventDetail['start'] = event['dateCreated'];
+              var dateFormatted = moment(event['dateCreated']).format('YYYY-MM-DD');
+              eventDetail['start'] = dateFormatted;
+              // eventDetail['title'] = '✓';
+              eventDetail['title'] = dateFormatted;
             }
 
             events.push(eventDetail);
           });
         }
-        callback(events);
+        var uniqueEvents = [];
+        for ( var i = 0; i < events.length - 1; i++ ) {
+          if ( events[i+1]['start'] != events[i]['start'] ) {
+            uniqueEvents.push(events[i]);
+          }
+        }
+        callback(uniqueEvents);
 
       }
     }
