@@ -35,6 +35,8 @@ Template.DonesIndex.helpers({
   'options': function () {
     return {
       eventLimit: true,
+      backgroundColor: 'yellow',
+      textColor: 'black',
       events: function (start, end, timezone, callback) {
         var events = [];
 

@@ -10,3 +10,6 @@ nooitaf:semantic-ui
 
 momentjs:moment
 gquemart:meteor-reactive-fullcalendar
+accounts-ui
+accounts-password
+accounts-base

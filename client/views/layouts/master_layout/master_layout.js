@@ -26,6 +26,10 @@ Template.MasterLayout.created = function () {
 };
 
 Template.MasterLayout.rendered = function () {
+  $('.ui.dropdown')
+    .dropdown({
+      on: 'hover'
+    });
 };
 
 Template.MasterLayout.destroyed = function () {
