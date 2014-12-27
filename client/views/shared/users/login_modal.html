@@ -1,13 +1,36 @@
 <template name="LoginModalForm">
-<div class="ui basic modal">
+<!-- <div class="ui basic modal"> -->
+<!--   <i class="close icon"></i> -->
+<!--   <div class="header"> -->
+<!--     Login -->
+<!--   </div> -->
+<!--   <div class="content"> -->
+<!--     <form class="loginForm ui form" action=""> -->
+<!--       <h4 class="ui header">Login</h4> -->
+<!--       <div class="field"><input type="email" name="emailLogin"></div> -->
+<!--     </form> -->
+<!--   </div> -->
+<!-- </div> -->
+
+
+<div class="ui small modal">
   <i class="close icon"></i>
   <div class="header">
     Login
   </div>
   <div class="content">
+
     <form class="loginForm ui form" action="">
-      <h4 class="ui header">Login</h4>
-      <div class="field"><input type="email" name="emailLogin"></div>
+      <div class="field">
+        <input type="email" name="emailLogin" placeholder="Username or Email">
+
+      </div>
+      <div class="field">
+        <input type="password" name="passwordLogin" placeholder="Password">
+      </div>
+      <div class="field">
+        <button class="ui primary button"><i class="key icon"></i> Login</button>
+      </div>
     </form>
   </div>
 </div>

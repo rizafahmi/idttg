@@ -35,7 +35,26 @@
     <div class="container">
 
       <!-- =============== CONTENT ====================== -->
+
+      {{#if currentUser}}
       {{> yield}}
+      {{else}}
+
+      <div class="ui masthead segment">
+
+        <div class="ui very relaxed divided stackable page grid">
+          <div class="column">
+          
+            <h1>Sorry, you're not authorized.</h1>
+            <p>Please login first by <a href="#" class="loginLink">click here</a>.
+            If you don't have any account, yet you can alwyas register.
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+      {{/if}}
 
       <!-- =============== CONTENT ====================== -->
 
@@ -45,5 +64,7 @@
     </div> <!-- END container -->
 
   </div> <!-- END full heigth -->
+
+  {{> LoginModalForm}}
 
 </template>
