@@ -1,13 +1,16 @@
 /*****************************************************************************/
-/* MasterLayout: Event Handlers and Helpersss .js*/
+/* LoginModalForm: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
-Template.MasterLayout.events({
-  'click .loginLink': function (e, tmpl) {
-    $(".login.modal").modal("show");
+Template.LoginModalForm.events({
+  'click .registerButton': function (e, tmpl) {
+    // e.preventDefault();
+    console.log("Something happen");
+    $(".login.modal").modal("hide");
+
   }
 });
 
-Template.MasterLayout.helpers({
+Template.LoginModalForm.helpers({
   /*
    * Example:
    *  items: function () {
@@ -17,17 +20,17 @@ Template.MasterLayout.helpers({
 });
 
 /*****************************************************************************/
-/* MasterLayout: Lifecycle Hooks */
+/* LoginModal: Lifecycle Hooks */
 /*****************************************************************************/
-Template.MasterLayout.created = function () {
+Template.LoginModalForm.created = function () {
 };
 
-Template.MasterLayout.rendered = function () {
+Template.LoginModalForm.rendered = function () {
   $('.ui.dropdown')
     .dropdown({
       on: 'hover'
     });
 };
 
-Template.MasterLayout.destroyed = function () {
+Template.LoginModalForm.destroyed = function () {
 };
