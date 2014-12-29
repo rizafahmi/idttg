@@ -1,24 +1,23 @@
-<template name="LoginModalForm">
+<template name="RegisterModalForm">
   <i class="close icon"></i>
   <div class="header">
-    Login
+    Register
   </div>
   <div class="content">
 
     <form class="loginForm ui form" action="">
       <div class="field">
-        <input type="email" name="emailLogin" placeholder="Username or Email" required="required">
+        <input type="email" name="emailLogin" placeholder="Email as your username" required="required">
 
       </div>
       <div class="field">
         <input type="password" name="passwordLogin" placeholder="Password" required="required">
       </div>
       <div class="field">
-        <p>Oh no, totally <a href="#" class="forgetLink">forgot my password.</a></p>
+        <input type="password" name="confirmPasswordLogin" placeholder="Password" required="required">
       </div>
       <div class="field">
-        <button class="ui primary button loginButton"><i class="key icon"></i> Login</button>
-        <a class="ui button registerButton"><i class="user icon"></i> Register</a>
+        <button class="ui orange button registerButton"><i class="save icon"></i> Save</button>
       </div>
     </form>
   </div>

@@ -1,21 +1,18 @@
 /*****************************************************************************/
-/* LoginModalForm: Event Handlers and Helpersss .js*/
+/* RegisterModalForm: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
-Template.LoginModalForm.events({
+Template.RegisterModalForm.events({
   'click .loginButton': function (e, tmpl) {
     e.preventDefault();
   },
   'click .registerButton': function (e, tmpl) {
+    // $(".login.modal").modal("hide");
     $(".register.modal").modal("show");
-
-  },
-  'click .forgetLink': function (e, tmpl) {
-    $(".forget.modal").modal("show");
 
   }
 });
 
-Template.LoginModalForm.helpers({
+Template.RegisterModalForm.helpers({
   /*
    * Example:
    *  items: function () {
@@ -27,15 +24,11 @@ Template.LoginModalForm.helpers({
 /*****************************************************************************/
 /* LoginModal: Lifecycle Hooks */
 /*****************************************************************************/
-Template.LoginModalForm.created = function () {
+Template.RegisterModalForm.created = function () {
 };
 
-Template.LoginModalForm.rendered = function () {
-  $('.ui.dropdown')
-    .dropdown({
-      on: 'hover'
-    });
+Template.RegisterModalForm.rendered = function () {
 };
 
-Template.LoginModalForm.destroyed = function () {
+Template.RegisterModalForm.destroyed = function () {
 };
