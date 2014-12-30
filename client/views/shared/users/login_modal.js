@@ -35,10 +35,6 @@ Template.LoginModalForm.created = function () {
 };
 
 Template.LoginModalForm.rendered = function () {
-  $('.ui.dropdown')
-    .dropdown({
-      on: 'hover'
-    });
 };
 
 Template.LoginModalForm.destroyed = function () {
