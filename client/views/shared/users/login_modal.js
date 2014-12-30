@@ -2,9 +2,6 @@
 /* LoginModalForm: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
 Template.LoginModalForm.events({
-  'click .loginButton': function (e, tmpl) {
-    e.preventDefault();
-  },
   'click .registerButton': function (e, tmpl) {
     $(".register.modal").modal("show");
 
@@ -12,6 +9,13 @@ Template.LoginModalForm.events({
   'click .forgetLink': function (e, tmpl) {
     $(".forget.modal").modal("show");
 
+  },
+  'submit .loginForm': function (e, tmpl) {
+    e.preventDefault();
+    var email = e.find('.emailLogin').val(),
+        password = tmpl.find('.passwordLogin').val();
+
+    console.log(email);
   }
 });
 
