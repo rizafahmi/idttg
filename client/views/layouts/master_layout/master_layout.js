@@ -4,7 +4,8 @@
 Template.MasterLayout.events({
   'click .loginLink': function (e, tmpl) {
     $(".login.modal").modal("show");
-  }
+  },
+
 });
 
 Template.MasterLayout.helpers({
