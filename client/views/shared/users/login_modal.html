@@ -9,20 +9,20 @@
 
     <form class="loginForm ui form" action="">
       <div class="field">
-        <input type="email" name="emailLogin" placeholder="Username or Email">
+        <input type="email" name="emailLogin" placeholder="Username or Email" required="required">
 
       </div>
       <div class="field">
-        <input type="password" name="passwordLogin" placeholder="Password">
+        <input type="password" name="passwordLogin" placeholder="Password" required="required">
       </div>
       <div class="field">
-        <p>Oh no, totally <a href="#">forgot my password.</a></p>
+        <p>Oh no, totally <a href="#" class="forgetLink">forgot my password.</a></p>
       </div>
       <div class="field">
         <button class="ui primary button"><i class="key icon"></i> Login</button>
+        <button class="ui primary button loginButton"><i class="key icon"></i> Login</button>
+        <a class="ui button registerButton"><i class="user icon"></i> Register</a>
       </div>
     </form>
-    <button class="ui button registerButton"><i class="user icon"></i> Register</button>
   </div>
-</div>
 </template>
