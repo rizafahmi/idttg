@@ -39,20 +39,40 @@
       {{> yield}}
       {{else}}
 
+
       <div class="ui masthead segment">
-
-        <div class="ui very relaxed divided stackable page grid">
+        <div class="ui two column middle aligned relaxed fitted stackable login centered grid">
           <div class="column">
-          
-            <h1>Sorry, you're not authorized.</h1>
-            <p>Please login first by <a href="#" class="loginLink">click here</a>.
-            If you don't have any account, yet you can alwyas register.
-            </p>
-
+            <div class="ui form segment">
+              <div class="field">
+                <label>Username</label>
+                <div class="ui left icon input">
+                  <input type="text" placeholder="Username">
+                  <i class="user icon"></i>
+                </div>
+              </div>
+              <div class="field">
+                <label>Password</label>
+                <div class="ui left icon input">
+                  <input type="password">
+                  <i class="lock icon"></i>
+                </div>
+              </div>
+              <div class="ui blue submit button">Login</div>
+            </div>
           </div>
-
+          <div class="ui vertical divider">
+            Or
+          </div>
+          <div class="center aligned column">
+            <div class="huge green ui labeled icon button">
+              <i class="signup icon"></i>
+              Sign Up
+            </div>
+          </div>
         </div>
       </div>
+
       {{/if}}
 
       <!-- =============== CONTENT ====================== -->
@@ -63,17 +83,5 @@
     </div> <!-- END container -->
 
   </div> <!-- END full heigth -->
-
-  <div class="ui small login modal">
-  {{> LoginModalForm}}
-  </div>
-
-  <div class="ui small register modal">
-  {{> RegisterModalForm}}
-  </div>
-
-  <div class="ui small forget modal">
-  {{> ForgetModalForm}}
-  </div>
 
 </template>
