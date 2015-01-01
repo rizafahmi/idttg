@@ -5,19 +5,9 @@
     <div class="ui large inverted fixed network menu">
       <div class="header item"><a href="/">IDTTG</a></div>
       <div class="right menu">
-        <div class="item"><a href="/">Dashboard</a></div>
-        <!-- <div class="ui mobile dropdown link item" tabindex="0"> -->
-        <!--   Main Menu -->
-        <!--   <i class="dropdown icon"></i> -->
-        <!--   <div class="menu" tabindex="&#45;1"> -->
-        <!--     <a class="item">Dashboard</a> -->
-        <!--     <a class="item">Cocktail Hours</a> -->
-        <!--     <a class="item">Community</a> -->
-        <!--   </div> -->
-        <!-- </div> -->
         {{#if currentUser}}
         <div class="ui dropdown link item" tabindex="0">
-          <a href="#">Logout</a>
+          <a href="#" class="logoutButton">Logout</a>
         </div>
         {{/if}}
       </div>
@@ -49,26 +39,7 @@
       <div class="ui masthead segment">
         <div class="ui two column middle aligned relaxed fitted stackable login centered grid">
           <div class="column">
-            <div class="ui form segment">
-              <div class="field">
-                <label>Username</label>
-                <div class="ui left icon input">
-                  <input type="text" placeholder="Username">
-                  <i class="user icon"></i>
-                </div>
-              </div>
-              <div class="field">
-                <label>Password</label>
-                <div class="ui left icon input">
-                  <input type="password">
-                  <i class="lock icon"></i>
-                </div>
-              </div>
-              <button class="ui blue submit button">
-                <i class="key icon"></i>
-                Login
-              </button>
-            </div>
+            {{> LoginForm }}
           </div>
           <div class="ui vertical divider">
             Or

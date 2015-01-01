@@ -1,0 +1,25 @@
+<template name="LoginForm">
+
+  <div class="ui form segment">
+    <form id="loginForm">
+      <div class="field">
+        <label>Username</label>
+        <div class="ui left icon input">
+          <input type="email" required="required" name="loginEmail" placeholder="Email as your username">
+          <i class="user icon"></i>
+        </div>
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <div class="ui left icon input">
+          <input type="password" required="required" name="loginPassword" placeholder="Your super secret password">
+          <i class="lock icon"></i>
+        </div>
+      </div>
+      <button type="submit" class="ui blue submit button">
+        <i class="key icon"></i>
+        Login
+      </button>
+    </form>
+  </div>
+</template>

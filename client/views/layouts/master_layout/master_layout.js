@@ -5,6 +5,10 @@ Template.MasterLayout.events({
   'click .loginLink': function (e, tmpl) {
     $(".login.modal").modal("show");
   },
+  'click .logoutButton': function (e, tmpl) {
+    Meteor.logout();
+    throwNotification("You are now logged out.");
+  }
 
 });
 
