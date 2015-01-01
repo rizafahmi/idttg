@@ -9,6 +9,7 @@ Template.DonesList.events({
     if (doneEntry.length > 0) {
       Dones.insert({
         entry: doneEntry,
+        userId: Meteor.userId(),
         dateCreated: new Date()
       });
 
@@ -29,6 +30,7 @@ Template.DonesList.events({
     if (gratitudeEntry.length > 0) {
       Gratitudes.insert({
         entry: gratitudeEntry,
+        userId: Meteor.userId(),
         dateCreated: new Date()
       });
 
