@@ -1,0 +1,19 @@
+<template name="errors">
+
+<div class="errors">
+  {{#each errors}}
+    {{> error}}
+  {{/each}}
+</div>
+
+</template>
+
+<template name="error">
+
+  <div class="ui icon message">
+    <i class="error icon"></i>
+    <div class="content">
+      <p>{{message}}</p>
+    </div>
+  </div>
+</template>

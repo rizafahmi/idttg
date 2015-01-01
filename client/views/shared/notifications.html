@@ -1,0 +1,19 @@
+<template name="notifications">
+
+<div class="notifications">
+  {{#each notifications}}
+    {{> notification}}
+  {{/each}}
+</div>
+
+</template>
+
+<template name="notification">
+
+  <div class="ui icon message">
+    <i class="info icon"></i>
+    <div class="content">
+      <p>{{message}}</p>
+    </div>
+  </div>
+</template>

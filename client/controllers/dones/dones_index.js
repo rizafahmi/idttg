@@ -5,6 +5,7 @@ DonesIndexController = RouteController.extend({
   },
 
   data: function () {
+    return Notifications.find();
   },
 
   action: function () {

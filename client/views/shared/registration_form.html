@@ -1,0 +1,31 @@
+<template name="RegistrationForm">
+<form id="regForm" name="regForm">
+  <div class="ui form segment">
+    <div class="field">
+      <label>Username</label>
+      <div class="ui left icon input">
+        <input type="email" required="required" name="regEmail" id="regEmail" placeholder="Email address as your username">
+        <i class="user icon"></i>
+      </div>
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <div class="ui left icon input">
+        <input placeholder="Your super secret password" required="required" type="password" name="regPassword" id="regPassword">
+        <i class="lock icon"></i>
+      </div>
+    </div>
+    <div class="field">
+      <label>Confirm Password</label>
+      <div class="ui left icon input">
+        <input placeholder="Your super secret password" name="regConfirmPassword" required="required" id="regConfirmPassword" type="password">
+        <i class="lock icon"></i>
+      </div>
+    </div>
+    <button class="ui teal submit button">
+      <i class="signup icon"></i>
+      Sign Up
+    </button>
+  </div>
+</form>
+</template>

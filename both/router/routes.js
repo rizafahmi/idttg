@@ -11,4 +11,9 @@ Router.configure({
  *  Example:
  *  Router.route('/', {name: 'home'});
 */
+Router.before(function () {
+  clearErrors();
+  clearNotifications();
+  this.next()
+});
 Router.route('/', {name: 'dones.index'});
