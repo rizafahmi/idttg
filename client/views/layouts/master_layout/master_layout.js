@@ -2,12 +2,15 @@
 /* MasterLayout: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
 Template.MasterLayout.events({
-  'click .loginLink': function (e, tmpl) {
-    $(".login.modal").modal("show");
-  },
   'click .logoutButton': function (e, tmpl) {
-    Meteor.logout();
-    throwNotification("You are now logged out.");
+    Meteor.logout( function (err) {
+      if (err) {
+        throwError(err.reason);
+      } else {
+        throwNotification("You are now logged out.");
+        Router.go("/");
+      }
+    });
   }
 
 });

@@ -3,11 +3,15 @@
 
     <!-- =============== MENU ====================== -->
     <div class="ui large inverted fixed network menu">
-      <div class="header item"><a href="/">IDTTG</a></div>
+      <div class="header item"><a href="{{ pathFor 'dones.index' }}">IDTTG</a></div>
       <div class="right menu">
         {{#if currentUser}}
-        <div class="ui dropdown link item" tabindex="0">
+        <div class="ui link item" tabindex="0">
           <a href="#" class="logoutButton">Logout</a>
+        </div>
+        {{else}}
+        <div class="ui link item" tabindex="0">
+          <a href="{{ pathFor 'dones.index' }}" class="loginButton">Login</a>
         </div>
         {{/if}}
       </div>
@@ -31,26 +35,7 @@
 
       <!-- =============== CONTENT ====================== -->
 
-      {{#if currentUser}}
       {{> yield}}
-      {{else}}
-
-
-      <div class="ui masthead segment">
-        <div class="ui two column middle aligned relaxed fitted stackable login centered grid">
-          <div class="column">
-            {{> LoginForm }}
-          </div>
-          <div class="ui vertical divider">
-            Or
-          </div>
-          <div class="column">
-            {{> RegistrationForm }}
-          </div>
-        </div>
-      </div>
-
-      {{/if}}
 
       <!-- =============== CONTENT ====================== -->
 
