@@ -14,8 +14,19 @@ Template.DonesListYesterday.helpers({
   'dones': function () {
       var todayDate = moment().startOf('day');
       var yesterdayDate = moment().add(-1, 'd').startOf('day');
-      console.log(yesterdayDate.toDate());
       return Dones.find({
+        userId: Meteor.userId(),
+        dateCreated: {
+          $lt: todayDate.toDate(),
+          $gte: yesterdayDate.toDate()
+        }
+      });
+    },
+  'gratitudes': function () {
+      var todayDate = moment().startOf('day');
+      var yesterdayDate = moment().add(-1, 'd').startOf('day');
+      return Gratitudes.find({
+        userId: Meteor.userId(),
         dateCreated: {
           $lt: todayDate.toDate(),
           $gte: yesterdayDate.toDate()
