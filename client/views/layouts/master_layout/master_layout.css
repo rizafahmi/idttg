@@ -10,3 +10,13 @@
   padding: 5rem 0rem;
 }
 
+.ui.inverted.black.footer.vertical.segment {
+  padding-top: 56px;
+}
+
+.ui.inverted.black.footer.vertical.segment .container{
+  width: 850px;
+  margin: 0px auto;
+
+}
+
