@@ -1,3 +1,74 @@
 <template name="Index">
-  client/views/index/index.html
+  <div class="ui masthead segment">
+    <div class="ui page grid">
+      <div class="column">
+        <div class="introduction">
+
+          <h1 class="ui huge header">
+            Progress Everyday Then Focus On Positives
+          </h1>
+
+          <div class="ui two column middle aligned relaxed fitted stackable grid">
+            <div class="column">
+
+              <h4 class="ui header">
+                Helps you make little progress everyday and keep positive thinking
+                to keep you moving forward to achieve the next big thing in your life
+                then write down your daily gratitude to feel happier.
+              </h4>
+
+              <h4 class="ui header">
+                Feel accomplished by writing down what you did. It helps you moving forward and keeping you on the right track.
+              </h4>
+
+              <h4 class="ui header">
+                Gives you <strong>satisfaction</strong> in working toward your goals.
+              </h4>
+
+              <h3>Embraced small wins!</h3>
+
+            </div>
+            <div class="column">
+
+              <div class="ui form inverted segment">
+                <form id="loginForm">
+                  <div class="field">
+                    <div class="ui left icon input">
+                      <input type="email" required="required" name="loginEmail" placeholder="Email as your username">
+                      <i class="user icon"></i>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <div class="ui left icon input">
+                      <input type="password" required="required" name="loginPassword" placeholder="Your super secret password">
+                      <i class="lock icon"></i>
+                    </div>
+                  </div>
+                  <button type="submit" class="ui blue labeled icon fluid button">
+                    <i class="key icon"></i>
+                    Login
+                  </button>
+                </form>
+
+                <div class="ui inverted horizontal divider">
+                  Or
+                </div>
+
+                <a href="{{ pathFor "dones.index" }}" class="ui teal labeled icon fluid large button">
+                  Sign-up for free
+                  <i class="signup icon"></i>
+                </a>
+
+              </div>
+
+
+            </div>
+          </div>
+
+
+          <div class="ui hidden divider"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>

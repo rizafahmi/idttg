@@ -11,7 +11,7 @@
         </div>
         {{else}}
         <div class="ui link item" tabindex="0">
-          <a href="{{ pathFor 'dones.index' }}" class="loginButton">Login</a>
+          <a href="{{ pathFor 'dones.index' }}" class="loginButton">Login or Register</a>
         </div>
         {{/if}}
       </div>
@@ -25,7 +25,7 @@
 
       <!-- =============== MESSAGES ==================== -->
 
-      <div class="ui masthead segment">
+      <div class="ui raised segment">
       {{> errors}}
       {{> notifications}}
 
