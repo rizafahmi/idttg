@@ -37,6 +37,15 @@ Template.Index.created = function () {
 
 Template.Index.rendered = function () {
   $(".idttg").popup();
+  $("#slider").flexslider({
+    animation: "slide",
+    controlNav: true,
+    animationLoop: true,
+    slideshow: true,
+    directionNav: false,
+    pauseOnHover: true
+  });
+  $('.ui.video').video();
 };
 
 Template.Index.destroyed = function () {
