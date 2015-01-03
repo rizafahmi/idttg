@@ -9,3 +9,19 @@
 .introduction {
   padding-top: 35px;
 }
+
+.ui.how.segment {
+  margin: 35px;
+}
+
+.row.header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+span.idttg {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  -moz-text-decoration-style: dotted;
+  -o-text-decoration-style: dotted;
+}

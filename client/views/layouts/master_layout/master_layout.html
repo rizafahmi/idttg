@@ -3,7 +3,11 @@
 
     <!-- =============== MENU ====================== -->
     <div class="ui large inverted fixed network menu">
-      <div class="header item"><a href="{{ pathFor 'dones.index' }}">IDTTG</a></div>
+      {{#if currentUser}}
+      <div class="header item idttg"><a href="{{ pathFor 'dones.index' }}">IDTTG</a></div>
+      {{else}}
+      <div class="header item idttg"><a href="{{ pathFor 'index' }}">IDTTG</a></div>
+      {{/if}}
       <div class="right menu">
         {{#if currentUser}}
         <div class="ui link item" tabindex="0">
