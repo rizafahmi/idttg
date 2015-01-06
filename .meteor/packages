@@ -14,3 +14,4 @@ accounts-ui
 accounts-password
 accounts-base
 johannesma:meteor-flexslider
+mrt:cron
