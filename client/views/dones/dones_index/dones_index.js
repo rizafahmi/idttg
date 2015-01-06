@@ -40,6 +40,7 @@ Template.DonesIndex.helpers({
       eventLimit: true,
       backgroundColor: 'yellow',
       textColor: 'black',
+      height: 420,
       events: function (start, end, timezone, callback) {
         var events = [];
 
