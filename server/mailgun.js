@@ -1,6 +1,6 @@
 Meteor.startup(function() {  
   Meteor.methods({
-    emailFeedback: function (body, any_variable) {
+    emailFeedback: function (to, body, any_variable) {
       console.log("Sending email...");
 
       // Don't wait for result
@@ -12,7 +12,7 @@ Meteor.startup(function() {
         auth: "api:" + process.env.MAILGUN_API_KEY,
         params: {
           "from":"Time To IDTTG <info@idttg.com>",
-          "to":['rizafahmi@gmail.com'],
+          "to":[to],
           "subject": 'Time to IDTTG.',
           "html": body,
         }
