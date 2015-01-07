@@ -7,7 +7,8 @@ Router.configure({
   notFoundTemplate: 'NotFound'
 });
 
-Router.route('/home', {name: 'dones.index'});
+
+Router.route('/home', {name: 'dones.index', progress: false});
 Router.route('/', {name: 'index'});
 
 /*
