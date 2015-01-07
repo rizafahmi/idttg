@@ -35,6 +35,9 @@ Template.MasterLayout.rendered = function () {
     .dropdown({
       on: 'hover'
     });
+  Meteor.call('emailFeedback', body, {}, function (error, result) {
+    console.log(error); 
+  });
 };
 
 Template.MasterLayout.destroyed = function () {
