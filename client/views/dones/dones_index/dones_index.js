@@ -70,6 +70,9 @@ Template.DonesIndex.helpers({
         }
         callback(events);
 
+      },
+      dayClick: function (date, jsEvent, view) {
+        Router.go('/daily');
       }
     }
   },
