@@ -72,6 +72,13 @@ Template.DonesIndex.helpers({
 
       }
     }
+  },
+
+  'emailIsValidated': function () {
+    if (Meteor.user().emails[0].verified === true)
+      return true;
+    else
+      return false;
   }
 });
 
