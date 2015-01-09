@@ -1,21 +1,6 @@
 <template name="DonesIndex">
 
-    {{# unless emailIsValidated}}
-    <div class="ui raised segment">
-      <div class="notifications">
-
-        <div class="ui icon yellow message">
-          <i class="inbox icon"></i>
-          <div class="content">
-            <p>Your email are not validated yet. We can't send you email remainder. Please check your email to validate your email account.</p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-    {{/unless}}
-
+    {{> EmailNotifications }}
     <div class="ui masthead segment">
 
       <div class="ui very relaxed divided stackable page grid">
