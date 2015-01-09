@@ -13,7 +13,11 @@
         </a>
       </div>
       {{else}}
-      <div class="header item idttg"><a href="{{ pathFor 'index' }}">IDTTG Beta</a></div>
+      <div class="header item idttg"><a href="{{ pathFor 'index' }}">
+          <i class="checkmark box icon"></i>
+          <i class="plus icon"></i>
+          <i class="child  icon"></i>
+          IDTTG Beta</a></div>
       {{/if}}
       <div class="right menu">
         {{#if currentUser}}
