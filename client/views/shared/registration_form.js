@@ -6,12 +6,17 @@ Template.RegistrationForm.events({
       confirmPassword = e.target.regConfirmPassword.value;
 
     if (password === confirmPassword) {
+      $(".submit.teal.button").addClass("disabled");
+      $(".submit.teal.button").addClass("loading");
       Accounts.createUser({email: email, password: password},
         function (err) {
           if (err) {
             throwError(err.reason);
+            $(".submit.teal.button").removeClass("disabled");
+            $(".submit.teal.button").removeClass("loading");
           } else {
-            throwNotification("Your account has been created.");
+            throwNotification("Your account has been created. Check your email for verified your email.");
+
           }
         });
     }

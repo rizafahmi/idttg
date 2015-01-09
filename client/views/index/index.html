@@ -31,6 +31,7 @@
             <div class="column">
 
               <div class="ui form inverted segment">
+                {{#unless currentUser}}
                 <form id="loginForm">
                   <div class="field">
                     <div class="ui left icon input">
@@ -59,6 +60,12 @@
                   <i class="signup icon"></i>
                 </a>
 
+              {{else}}
+                <a href="{{ pathFor "dones.index" }}" class="ui orange labeled icon fluid large button">
+                  Go To Your IDTTG Now
+                  <i class="unlock icon"></i>
+                </a>
+              {{/unless}}
               </div>
 
 

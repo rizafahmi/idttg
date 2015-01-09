@@ -1,4 +1,36 @@
 Meteor.startup(function() {  
+  smtp = {
+    username: "postmaster@idttg.com",
+    password: "95fba31687a0184844027c931b091a9d",
+    server: "smtp.mailgun.org",
+    port: 25
+  }
+
+  process.env.MAIL_URL = 'smtp://' + encodeURIComponent(smtp.username) + ':' + encodeURIComponent(smtp.password) + '@' + encodeURIComponent(smtp.server) + ':' + smtp.port;
+
+  Accounts.emailTemplates.from = 'IDTTG <no-reply@idttg.com>';
+  Accounts.emailTemplates.siteName = 'IDTTG';
+
+  Accounts.emailTemplates.verifyEmail.subject = function (user) {
+    return "IDTTG Email Confirmation";
+  };
+
+  Accounts.onCreateUser(function(options, user) {
+    user.profile = {};
+
+    // we wait for Meteor to create the user before sending an email
+    // Meteor.setTimeout(function() {
+    //   Accounts.sendVerificationEmail(user._id);
+    //   console.log("Send verification email...");
+    // }, 2 * 1000);
+
+    return user;
+  });
+
+  Accounts.emailTemplates.verifyEmail.text = function (user, url) {
+    return 'click on the following link to verify your email address: ' + url;
+  };
+
   Meteor.methods({
     emailFeedback: function (to, body, any_variable) {
       console.log("Sending email...");

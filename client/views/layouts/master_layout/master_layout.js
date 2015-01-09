@@ -28,6 +28,17 @@ Template.MasterLayout.helpers({
 /* MasterLayout: Lifecycle Hooks */
 /*****************************************************************************/
 Template.MasterLayout.created = function () {
+  if (Accounts._verifyEmailToken) {
+    Accounts.verifyEmail(Accounts._verifyEmailToken, function(err) {
+      if (err != null) {
+        if (err.message = 'Verify email link expired [403]') {
+          throwError('Sorry this verification link has expired.')
+        }
+      } else {
+        throwNotification('Thank you! Your email address has been confirmed.')
+      }
+    });
+  }
 };
 
 Template.MasterLayout.rendered = function () {
@@ -35,9 +46,6 @@ Template.MasterLayout.rendered = function () {
     .dropdown({
       on: 'hover'
     });
-  Meteor.call('emailFeedback', body, {}, function (error, result) {
-    console.log(error); 
-  });
 };
 
 Template.MasterLayout.destroyed = function () {
