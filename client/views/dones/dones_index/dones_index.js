@@ -72,7 +72,9 @@ Template.DonesIndex.helpers({
 
       },
       dayClick: function (date, jsEvent, view) {
-        Router.go('/daily');
+        var tgl = moment(date);
+        console.log(tgl.month());
+        Router.go('/daily' + "/" + tgl.date() + "/" + (tgl.month()+1) + "/" + tgl.year());
       }
     }
   },

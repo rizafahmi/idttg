@@ -9,7 +9,7 @@ Router.configure({
 
 
 Router.route('/home', {name: 'dones.index', progress: false});
-Router.route('/daily', {name: 'dones.daily', progress: false});
+Router.route('/daily/:date/:month/:year', {name: 'dones.daily', progress: false});
 Router.route('/', {name: 'index'});
 
 /*
