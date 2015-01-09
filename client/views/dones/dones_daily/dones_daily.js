@@ -1,7 +1,7 @@
 /*****************************************************************************/
-/* Daily: Event Handlers and Helpersss .js*/
+/* DonesDaily: Event Handlers and Helpersss .js*/
 /*****************************************************************************/
-Template.Daily.events({
+Template.DonesDaily.events({
   /*
    * Example:
    *  'click .selector': function (e, tmpl) {
@@ -10,7 +10,7 @@ Template.Daily.events({
    */
 });
 
-Template.Daily.helpers({
+Template.DonesDaily.helpers({
   /*
    * Example:
    *  items: function () {
@@ -20,13 +20,13 @@ Template.Daily.helpers({
 });
 
 /*****************************************************************************/
-/* Daily: Lifecycle Hooks */
+/* DonesDaily: Lifecycle Hooks */
 /*****************************************************************************/
-Template.Daily.created = function () {
+Template.DonesDaily.created = function () {
 };
 
-Template.Daily.rendered = function () {
+Template.DonesDaily.rendered = function () {
 };
 
-Template.Daily.destroyed = function () {
+Template.DonesDaily.destroyed = function () {
 };
