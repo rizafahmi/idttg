@@ -8,9 +8,6 @@ Template.DonesIndex.events({
    *
    *  }
    */
-  'click .button': function (e, tmpl) {
-    console.log("Hey you click button");
-  }
 });
 
 Template.DonesIndex.helpers({

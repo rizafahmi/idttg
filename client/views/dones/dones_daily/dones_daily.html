@@ -1,7 +1,35 @@
 <template name="DonesDaily">
-  {{> EmailNotifications}}
+
+  {{> EmailNotifications }}
   <div class="ui masthead segment">
-    client/views/dones/dones_daily/dones_daily.html
+
+    <div class="ui very relaxed divided stackable page grid">
+      <div class="sixteen wide column">
+
+        <h1 class="center aligned ui header">Dashboard</h1>
+
+      </div>
+      <div class="six wide center aligned stackable column">
+
+        {{> ReactiveFullcalendar options=options}}
+
+      </div>
+
+      <div class="ten wide stackable column">
+
+        <div class="sixteen wide center aligned column">
+          <h2>Today, {{getToday}}</h2>
+        </div>
+        {{> DonesList}}
+
+        <div class="sixteen wide center aligned column">
+          <h2>Yesterday, {{getYesterday}}</h2>
+        </div>
+        {{> DonesListYesterday}}
+
+      </div>
+    </div>
   </div>
+
 
 </template>

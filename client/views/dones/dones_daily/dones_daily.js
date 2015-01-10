@@ -11,12 +11,70 @@ Template.DonesDaily.events({
 });
 
 Template.DonesDaily.helpers({
-  /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
+  dates: function () {
+    var dones = Dones.find();
+    var data = [];
+    dones.fetch().forEach(function (item) {
+      var dateFormat = moment(item.dateCreated).format("MMM Do YY");
+      // if (data.indexOf({date: dateFormat}) < 0) {
+      if (!_.findWhere(data, {dateFormat: dateFormat})) {
+        data.push({
+          dateFormat: dateFormat,
+          date: item.dateCreated
+        });
+      }
+    });
+    return data;
+  },
+  'getToday': function () {
+    return moment().format('MMMM Do YYYY');
+  },
+  'getYesterday': function () {
+    return moment().add(-1, 'd').format('MMMM Do YYYY');
+  },
+  'options': function () {
+    return {
+      eventLimit: true,
+      backgroundColor: 'yellow',
+      textColor: 'black',
+      height: 420,
+      events: function (start, end, timezone, callback) {
+        var events = [];
+
+        var calendar = Dones.find({});
+
+        if (calendar) {
+          calendar.fetch().forEach( function (event) {
+            eventDetail = {};
+            for ( dateCreated in event ) {
+              var dateFormatted = moment(event['dateCreated']).format('YYYY-MM-DD');
+              eventDetail['start'] = dateFormatted;
+              eventDetail['title'] = '✓';
+              // eventDetail['title'] = dateFormatted;
+            }
+
+            var exist = false;
+            events.forEach( function (item) {
+              if (item['start'] === dateFormatted)
+                exist = true;
+              else
+                exist = false;
+            });
+
+            if (!exist)
+              events.push(eventDetail);
+          });
+        }
+        callback(events);
+
+      },
+      dayClick: function (date, jsEvent, view) {
+        var tgl = moment(date);
+        console.log(tgl.month());
+        Router.go('/daily' + "/" + tgl.date() + "/" + (tgl.month()+1) + "/" + tgl.year());
+      }
+    }
+  },
 });
 
 /*****************************************************************************/
