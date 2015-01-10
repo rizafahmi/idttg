@@ -6,7 +6,7 @@
     <div class="ui very relaxed divided stackable page grid">
       <div class="sixteen wide column">
 
-        <h1 class="center aligned ui header">Dashboard</h1>
+        <h1 class="center aligned ui header">Date Views</h1>
 
       </div>
       <div class="six wide center aligned stackable column">
@@ -18,14 +18,41 @@
       <div class="ten wide stackable column">
 
         <div class="sixteen wide center aligned column">
-          <h2>Today, {{getToday}}</h2>
+          <h2>{{getDate}}</h2>
         </div>
-        {{> DonesList}}
 
-        <div class="sixteen wide center aligned column">
-          <h2>Yesterday, {{getYesterday}}</h2>
+        <div class="column">
+          <!-- FORM -->
+          <table class="ui striped table">
+            <tbody>
+            {{#each dones}}
+            <tr>
+              <td>
+                <i class="checkmark box green icon"></i> <span class="ui teal horizontal label">Done</span> {{entry}}
+              </td>
+              <td class="right aligned">
+                <button type="button" class="ui icon tiny red button donesRemoveButton"><i class="icon remove"></i></button>
+              </td>
+            </tr>
+
+            {{/each}}
+            {{#each gratitudes}}
+            <tr>
+              <td>
+                <i class="child red icon"></i> <span class="ui red horizontal label">Grateful</span> {{entry}}
+              </td>
+              <td class="right aligned">
+                <button type="button" class="ui icon tiny red button gratefulReomveButton"><i class="icon remove"></i></button>
+              </td>
+            </tr>
+
+            {{/each}}
+
+
+            </tbody>
+          </table>
+
         </div>
-        {{> DonesListYesterday}}
 
       </div>
     </div>

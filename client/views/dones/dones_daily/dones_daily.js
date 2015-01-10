@@ -11,26 +11,10 @@ Template.DonesDaily.events({
 });
 
 Template.DonesDaily.helpers({
-  dates: function () {
-    var dones = Dones.find();
-    var data = [];
-    dones.fetch().forEach(function (item) {
-      var dateFormat = moment(item.dateCreated).format("MMM Do YY");
-      // if (data.indexOf({date: dateFormat}) < 0) {
-      if (!_.findWhere(data, {dateFormat: dateFormat})) {
-        data.push({
-          dateFormat: dateFormat,
-          date: item.dateCreated
-        });
-      }
-    });
-    return data;
-  },
-  'getToday': function () {
-    return moment().format('MMMM Do YYYY');
-  },
-  'getYesterday': function () {
-    return moment().add(-1, 'd').format('MMMM Do YYYY');
+  'getDate': function () {
+    var date = Session.get("date");
+
+    return moment(date).format('MMMM Do YYYY');
   },
   'options': function () {
     return {
