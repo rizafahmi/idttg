@@ -16,6 +16,28 @@ Template.DonesDaily.helpers({
 
     return moment(date).format('MMMM Do YYYY');
   },
+  dones: function () {
+    var date = Session.get('date');
+    var startDate = moment(date).startOf('day');
+    var endDate = moment(date).endOf('day');
+    return Dones.find({
+      dateCreated: {
+        $gte: startDate.toDate(),
+        $lte: endDate.toDate()
+      }
+    }, {sort: {dateCreated: -1}});
+  },
+  gratitudes: function () {
+    var date = Session.get('date');
+    var startDate = moment(date).startOf('day');
+    var endDate = moment(date).endOf('day');
+    return Gratitudes.find({
+      dateCreated: {
+        $gte: startDate.toDate(),
+        $lte: endDate.toDate()
+      }
+    });
+  },
   'options': function () {
     return {
       eventLimit: true,
