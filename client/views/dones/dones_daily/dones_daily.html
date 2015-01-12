@@ -34,6 +34,12 @@
                 <button type="button" class="ui icon tiny red button donesRemoveButton"><i class="icon remove"></i></button>
               </td>
             </tr>
+            {{else}}
+            <tr>
+              <td colspan="2">
+                You've done nothing on this date, yet...
+              </td>
+            </tr>
 
             {{/each}}
             {{#each gratitudes}}
@@ -45,8 +51,23 @@
                 <button type="button" class="ui icon tiny red button gratefulReomveButton"><i class="icon remove"></i></button>
               </td>
             </tr>
+            {{else}}
+            <tr>
+              <td colspan="2">
+                You've no gratitudes on this date, yet...
+              </td>
+            </tr>
 
             {{/each}}
+
+            <tr>
+              <td colspan="2">
+                <a href="{{ pathFor "dones.index" }}" class="ui orange labeled icon fluid button">
+                  Go To Today To Start Write Your Dones and Gratitude
+                  <i class="write icon"></i>
+                </a>
+              </td>
+            </tr>
 
 
             </tbody>
