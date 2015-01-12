@@ -41,19 +41,22 @@ var sendEmail = function () {
     body = body + body_dones;
     body += "<br><br>";
     body += "Go to <a href='http://idttg.com'>IDTTG to start writing your dones and gratitudes for today</a>.";
-    Meteor.call('emailFeedback', user.emails[0].address, body, {}, function (error, data) {
-      if (error)
-        console.log(error);
-      console.log(user.emails[0].address);
-    });
+    body_dones = "";
+
+    console.log(body);
+
+    // Meteor.call('emailFeedback', user.emails[0].address, body, {}, function (error, data) {
+    //   if (error)
+    //     console.log(error);
+    //   console.log(user.emails[0].address);
+    // });
   });
 
-  console.log(body);
 }
 
 var cron = new Meteor.Cron({
     events: {
-      "50 17 * * *": sendEmail
-      // "* * * * *": sendEmail
+      // "50 17 * * *": sendEmail
+      "* * * * *": sendEmail
     }
 });
