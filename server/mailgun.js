@@ -32,6 +32,11 @@ Meteor.startup(function() {
   };
 
   Meteor.methods({
+    resendVerificationEmail: function (userId) {
+      console.log("Sending verification email...");
+      Accounts.sendVerificationEmail(userId);
+
+    },
     emailFeedback: function (to, body, any_variable) {
       console.log("Sending email...");
 

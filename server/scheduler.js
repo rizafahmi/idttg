@@ -49,7 +49,7 @@ var sendEmail = function () {
     body += "Go to <a href='http://idttg.com/home'>IDTTG to start writing your dones and gratitudes for today</a>.";
     body_dones = "";
 
-    console.log(body);
+    // console.log(body);
 
     Meteor.call('emailFeedback', user.emails[0].address, body, {}, function (error, data) {
       if (error)

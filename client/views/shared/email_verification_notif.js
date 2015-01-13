@@ -8,6 +8,9 @@ Template.EmailNotifications.events({
    *
    *  }
    */
+  'click .resendValidation': function (e, tmpl) {
+    Meteor.call('resendVerificationEmail', Meteor.userId());
+  }
 });
 
 Template.EmailNotifications.helpers({
