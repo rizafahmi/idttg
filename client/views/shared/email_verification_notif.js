@@ -9,7 +9,10 @@ Template.EmailNotifications.events({
    *  }
    */
   'click .resendValidation': function (e, tmpl) {
+    $(".notifications").fadeOut();
     Meteor.call('resendVerificationEmail', Meteor.userId());
+    $(".content p").text("You're verification email has been sent. Please check your inbox and follow the instruction.");
+    $(".notifications").fadeIn();
   }
 });
 
