@@ -10,6 +10,7 @@ Template.LoginForm.events({
           throwError(err.reason);
         } else {
           throwNotification("Login succeeded!");
+          App.track("Logged-in");
         }
       });
     return false;

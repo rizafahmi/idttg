@@ -16,6 +16,7 @@ Template.RegistrationForm.events({
             $(".submit.teal.button").removeClass("loading");
           } else {
             throwNotification("Your account has been created. Check your email for verified your email.");
+            App.track("Registered");
 
           }
         });
