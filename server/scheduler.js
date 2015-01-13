@@ -54,7 +54,7 @@ var sendEmail = function () {
     Meteor.call('emailFeedback', user.emails[0].address, body, {}, function (error, data) {
       if (error)
         console.log(error);
-      console.log(user.emails[0].address);
+      // console.log(user.emails[0].address);
     });
   });
 
@@ -62,7 +62,7 @@ var sendEmail = function () {
 
 var cron = new Meteor.Cron({
     events: {
-      "35 6 * * *": sendEmail
+      "35 4 * * *": sendEmail
       // "* * * * *": sendEmail
     }
 });
