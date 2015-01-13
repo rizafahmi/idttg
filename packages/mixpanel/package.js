@@ -1,6 +1,6 @@
 Package.describe({
   name: 'mixpanel',
-  summary: 'A local mixpanel package for our project.'
+  summary: 'A local mixpanel package for idttg project.'
 });
 
 Package.on_use(function (api) {
@@ -15,7 +15,7 @@ Package.on_use(function (api) {
     * Add files that should be used with this
     * package.
     */
-   api.add_files('mixpanel.js', ['client', 'server']);
+   api.add_files('mixpanel.js', ['client']);
 
   /*
    * Export global symbols.
